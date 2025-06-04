@@ -1,0 +1,71 @@
+.land-first-div{
+    font-size:xx-large;
+    height: 100px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    color: red;
+    font-family: 'Arial Narrow Bold', sans-serif;
+}
+.land-second-div{
+   display: flex;
+   justify-content: center;
+   margin-top: 30px;
+}
+
+.land-img1{
+   width: 180px;
+   height: 230px;
+   background-color: transparent;
+   display: block;
+}
+.land-third-div{
+    display: flex;
+    justify-content: center;
+}
+.land-fourth-div{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 60px;
+}
+button{
+    width: 180px;
+    height: 60px;
+    font-size: large;
+    font-family:  'Arial Narrow Bold', sans-serif;
+    border:none;
+    border-radius: 10px;
+    color: white;
+}
+.btn1{
+  background-color: rgb(101, 182, 101);
+}
+.btn2{
+    background-color: rgb(103, 103, 178);
+}
+
+@media (max-width:800px){
+    .land-first-div{
+    font-size:x-large;
+    height: 100px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-family: 'Arial Narrow Bold', sans-serif;
+  }
+  
+}
+
+@media (max-width:400px){
+    .land-first-div{
+    font-size:small;
+    height: 80px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-family: 'Arial Narrow Bold', sans-serif;
+  }
+}

@@ -11,6 +11,7 @@
    display: flex;
    justify-content: center;
    margin-top: 30px;
+   font-size:large;
 }
 
 .land-img1{
@@ -32,7 +33,7 @@
 button{
     width: 180px;
     height: 60px;
-    font-size: large;
+    font-size: x-large;
     font-family:  'Arial Narrow Bold', sans-serif;
     border:none;
     border-radius: 10px;
@@ -55,17 +56,72 @@ button{
     color: red;
     font-family: 'Arial Narrow Bold', sans-serif;
   }
-  
+  .land-second-div{
+   display: flex;
+   justify-content: center;
+   margin-top: 20px;
+   font-size: medium;
+  }
+  .land-img1{
+   width: 150px;
+   height: 200px;
+   background-color: transparent;
+   display: block;
+  }
+  .land-fourth-div{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 40px;
+  }
+  button{
+    width: 160px;
+    height: 60px;
+    font-size: large;
+    font-family:  'Arial Narrow Bold', sans-serif;
+    border:none;
+    border-radius: 10px;
+    color: white;
+ }
 }
 
 @media (max-width:400px){
     .land-first-div{
-    font-size:small;
+    font-size: 18px;
     height: 80px;
-    margin-top: 40px;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     color: red;
     font-family: 'Arial Narrow Bold', sans-serif;
+  }
+  .land-second-div{
+   display: flex;
+   justify-content: center;
+   margin-top: 10px;
+   font-size: small;
+  }
+  .land-img1{
+   width: 140px;
+   height: 180px;
+   background-color: transparent;
+   display: block;
+  }
+  .land-fourth-div{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    margin-top: 30px;
+    gap: 20px;
+  }
+  button{
+    width: 180px;
+    height: 60px;
+    font-size: medium;
+    font-family:  'Arial Narrow Bold', sans-serif;
+    border:none;
+    border-radius: 10px;
+    color: white;
   }
 }

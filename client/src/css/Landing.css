@@ -30,7 +30,23 @@
     margin-top: 40px;
     gap: 60px;
 }
-button{
+.btn1{
+  background-color: rgb(101, 182, 101);
+    width: 180px;
+    height: 60px;
+    font-size: x-large;
+    font-family:  'Arial Narrow Bold', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:none;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+  /* color: inherit; */
+}
+.btn2{
+    background-color: rgb(103, 103, 178);
     width: 180px;
     height: 60px;
     font-size: x-large;
@@ -38,12 +54,10 @@ button{
     border:none;
     border-radius: 10px;
     color: white;
-}
-.btn1{
-  background-color: rgb(101, 182, 101);
-}
-.btn2{
-    background-color: rgb(103, 103, 178);
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
 @media (max-width:800px){
@@ -74,7 +88,22 @@ button{
     margin-top: 30px;
     gap: 40px;
   }
-  button{
+  .btn1{
+  background-color: rgb(101, 182, 101);
+    width: 160px;
+    height: 60px;
+    font-size: large;
+    font-family:  'Arial Narrow Bold', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:none;
+    border-radius: 10px;
+    color: white;
+  text-decoration: none;
+}
+.btn2{
+    background-color: rgb(103, 103, 178);
     width: 160px;
     height: 60px;
     font-size: large;
@@ -82,7 +111,11 @@ button{
     border:none;
     border-radius: 10px;
     color: white;
- }
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
 }
 
 @media (max-width:400px){
@@ -115,13 +148,32 @@ button{
     margin-top: 30px;
     gap: 20px;
   }
-  button{
-    width: 180px;
+  .btn1{
+  background-color: rgb(101, 182, 101);
+    width: 160px;
+    height: 60px;
+    font-size: medium;
+    font-family:  'Arial Narrow Bold', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:none;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+}
+.btn2{
+    background-color: rgb(103, 103, 178);
+    width: 160px;
     height: 60px;
     font-size: medium;
     font-family:  'Arial Narrow Bold', sans-serif;
     border:none;
     border-radius: 10px;
     color: white;
-  }
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
 }

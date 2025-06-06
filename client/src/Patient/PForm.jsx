@@ -1,43 +1,80 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import '../Patient/patient.css'
+import axios from 'axios';
 
 function PForm({setPatientForm}) {
 
-  const {register,handleSubmit} = useForm();
+  const {register,handleSubmit,formState:{errors,isSubmitting}} = useForm();
 
-  const submitForm = (e) => {
-     console.log(e)
+  const submitForm = async (data) => {
+     try {
+       const response = await axios.post('http://localhost:5000/api/patient/form',data)
+       console.log(response.data.data);
+     } catch (error) {
+       console.log(error);
+     }
   }
   return (
-    <>
+     <>
       <div className="overlay">
         <div className="login-container">
-          <button className='close-btn' onClick={()=>setPatientForm(false)}>×</button>
+          <button onClick={()=>setPatientForm(false)} className='close-btn'>×</button>
           <form onSubmit={handleSubmit(submitForm)}>
             <div className='form-group'>
               <input 
                  type="text" 
                  placeholder='Full Name' 
-                 {...register('fullname',{required:true})}
+                 {...register('fullname',{required:true,
+                  pattern: {
+                  value: /^[A-Za-z ]+$/,
+                  message: "Only alphabets and spaces allowed"
+                }})}
                  />
+              {errors.fullname && <p className="error-msg">{errors.fullname.message || "Name is Required"}</p>}
+            </div>
+             <div className='form-group'>
+              <input type="text" placeholder='Hospital'  {...register('hospital',{required:true,pattern: {
+                                value: /^[A-Za-z ]+$/,
+                                message: "Only alphabets and spaces allowed"
+               }})}  />
+              {errors.hospital && <p className="error-msg">{errors.hospital.message ||"Hospital is Required"}</p>}
             </div>
             <div className='form-group'>
-              <input type="text" 
-                     placeholder='Hospital'
-                     {...register('hospital',{required:true})} 
-              />
+              <input type="number" placeholder='Contact'  {...register('contact',{required:true,minLength:{value:10,message:"Please enter valid contact number"}})} />
+              {errors.contact && <p className="error-msg">{errors.contact.message||"Contact is Required"}</p>}
             </div>
             <div className='form-group'>
-              <input type="number" placeholder='Contact'  {...register('contact',{required:true})} />
+              <input type="text" placeholder='Address'  {...register('address',{required:true,pattern: {
+                                value: /^[A-Za-z ]+$/,
+                                message: "Only alphabets and spaces allowed"
+               }})}  />
+              {errors.address && <p className="error-msg">{errors.address.message ||"Address is Required"}</p>}
             </div>
             <div className='form-group'>
-              <input type="text" placeholder='Location'  {...register('location',{required:true})}  />
+              <input type="text" placeholder='City'  {...register('city',{required:true ,pattern: {
+                  value: /^[A-Za-z ]+$/,
+                  message: "Only alphabets and spaces allowed"
+                }})}  />
+              {errors.city && <p className="error-msg">{errors.city.message || "City is Required"}</p>}
             </div>
             <div className='form-group'>
-              <input type="text" placeholder='Blood Group'  {...register('group',{required:true})}  />
+              <select
+                    {...register("bgroup", { required: "Please select a blood group" })}
+                  >
+                    <option value="">-- Select Blood Group --</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                  </select>
+              {errors.bgroup && <p className="error-msg">{errors.bgroup.message ||"Blood Group is Required"}</p>}
             </div>
-            <button className="submit-btn">Request</button>
+            <button disabled={isSubmitting} className="submit-btn">{isSubmitting?'Registering..':'Register'}</button>
           </form>
         </div>
       </div>

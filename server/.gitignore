@@ -1,0 +1,29 @@
+# Node modules
+node_modules/
+
+# Env files
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS/System files
+.DS_Store
+Thumbs.db
+
+# IDEs/editors
+.vscode/
+.idea/
+
+# Build or temp files
+dist/
+tmp/
+temp/
+
+# Coverage reports
+coverage/
+
+# Optional: MongoDB dump files
+dump/
